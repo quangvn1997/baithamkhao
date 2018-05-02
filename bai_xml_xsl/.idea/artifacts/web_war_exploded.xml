@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/web_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Assignment1/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Assignment1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="xom:xom:1.2.5" />
+          <element id="library" level="project" name="nux:nux:1.6" />
+          <element id="library" level="project" name="gnu.getopt:java-getopt:1.0.13" />
+          <element id="library" level="project" name="org.apache.lucene:lucene-core:7.3.0" />
+          <element id="library" level="project" name="net.sf.saxon:saxon:8.7" />
+          <element id="library" level="project" name="net.sf.saxon:saxon-xpath:8.7" />
+          <element id="library" level="project" name="net.sf.saxon:saxon-dom:8.7" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.6" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
