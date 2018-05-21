@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<table class="table table-striped">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>categoryId</td>
+        <td>description</td>
+        <td>imgUrl</td>
+        <td>price</td>
+        <td>createdAt</td>
+        <td>updatedAt</td>
+        <td>status</td>
+        <td>#</td>
+        <td>#</td>
+    </tr>
+    <tr th:each="dish : ${pagination.getContent()}">
+        <td th:text="${dish.id}"></td>
+        <td th:text="${dish.name}"></td>
+        <td th:text="${dish.categoryId}"></td>
+        <td th:text="${dish.description}"></td>
+        <td th:text="${dish.imgUrl}"></td>
+        <td th:text="${dish.price}"></td>
+        <td th:text="${dish.createdAt}"></td>
+        <td th:text="${dish.updatedAt}"></td>
+        <td th:text="${dish.status}"></td>
+        <td><a th:href="@{'/dish/edit/' + ${dish.id}}">Edit</a></td>
+        <td><a th:href="@{'/dish/delete/' + ${dish.id}}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<nav aria-label=" navigation">
+    <ul class="pager">
+        <li><a th:href="@{/product/list(page=1, limit=${limit})}">First</a></li>
+        <li th:if="${page &gt; 1}">
+            <a th:href="@{/product/list(page = ${page - 1}, limit=${limit})}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a th:text="${page}">1</a></li>
+        <li th:if="${page &lt; pagination.getTotalPages()}">
+            <a th:href="@{/product/list(page=${page + 1}, limit=${limit})}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <li><a th:href="@{/product/list(page=${pagination.getTotalPages()}, limit=${limit})}">Last</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
