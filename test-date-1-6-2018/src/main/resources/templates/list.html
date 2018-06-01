@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>address</td>
+        <td>skill</td>
+        <td>datebirth</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="dish : ${pagination.getContent()}">
+            <td th:text="${dish.id}"></td>
+            <td th:text="${dish.name}"></td>
+            <td th:text="${dish.address}"></td>
+            <td th:text="${dish.skill}"></td>
+            <td th:text="${dish.datebirth}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
